@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My HTML Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    textarea {
+      width: 90%;
+      height: 200px;
+      margin-bottom: 1rem;
+      font-family: monospace;
+    }
+
+    iframe {
+      width: 90%;
+      height: 400px;
+      border: 2px solid #555;
+      background: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚡ Live HTML Viewer</h1>
+  <p>Type your HTML below and hit render:</p>
+  <textarea id="htmlInput" placeholder="Type some HTML here..."></textarea><br />
+  <button onclick="renderHTML()">Render</button>
+  <div style="margin-top: 2rem;">
+    <iframe id="previewFrame"></iframe>
+  </div>
+
+  <script>
+    function renderHTML() {
+      const code = document.getElementById("htmlInput").value;
+      document.getElementById("previewFrame").srcdoc = code;
+    }
+  </script>
+</body>
+</html>
 
